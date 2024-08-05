@@ -4,17 +4,14 @@
   "description": "Image Classification via ImageClassification Model",
   "main": "Main.xaml",
   "dependencies": {
-    "Druid.UiPath.Activities": "[1.0.7]",
-    "UiPath.Excel.Activities": "[2.11.1-preview]",
-    "UiPath.Form.Activities": "[1.5.0]",
-    "UiPath.GoogleSpeech.Activities": "[0.1.6850.39757]",
-    "UiPath.Mail.Activities": "[1.11.2-preview]",
-    "UiPath.MLServices.Activities": "[1.1.8]",
-    "UiPath.Persistence.Activities": "[1.2.2]",
-    "UiPath.System.Activities": "[21.8.0-preview]",
-    "UiPath.UIAutomation.Activities": "[21.8.0-preview]",
-    "UiPath.WebAPI.Activities": "[1.7.0]",
-    "UiPathTeam.Documents.TDDGenerator": "[1.4.7221.18964]"
+    "UiPath.Excel.Activities": "[2.11.4]",
+    "UiPath.Form.Activities": "[1.9.6]",
+    "UiPath.Mail.Activities": "[1.12.3]",
+    "UiPath.MLServices.Activities": "[1.2.1]",
+    "UiPath.Persistence.Activities": "[1.3.4]",
+    "UiPath.System.Activities": "[21.10.6]",
+    "UiPath.UIAutomation.Activities": "[21.10.10]",
+    "UiPath.WebAPI.Activities": "[1.9.2]"
   },
   "webServices": [],
   "entitiesStores": [],
@@ -65,5 +62,5 @@
   "isTemplate": false,
   "templateProjectData": {},
   "publishData": {},
-  "targetFramework": "Legacy"
+  "targetFramework": "Windows"
 }

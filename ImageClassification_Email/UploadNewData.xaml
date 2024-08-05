@@ -1,12 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="UploadNewData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:um="clr-namespace:UiPath.MLServices;assembly=UiPath.MLServices" xmlns:uma="clr-namespace:UiPath.MLServices.Activities;assembly=UiPath.MLServices.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="UploadNewData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:um="clr-namespace:UiPath.MLServices;assembly=UiPath.MLServices" xmlns:uma="clr-namespace:UiPath.MLServices.Activities;assembly=UiPath.MLServices.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Classification" Type="InArgument(x:String)" />
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_FilePath" Type="InArgument(x:String)" />
   </x:Members>
-  <mva:VisualBasic.Settings>
+  <VisualBasic.Settings>
     <x:Null />
-  </mva:VisualBasic.Settings>
+  </VisualBasic.Settings>
   <sap:VirtualizedContainerService.HintSize>390,390.333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>UploadNewData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
@@ -51,6 +51,7 @@
       <AssemblyReference>PresentationFramework</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
@@ -60,6 +61,7 @@
       <AssemblyReference>System.Linq</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
@@ -81,6 +83,7 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
@@ -90,7 +93,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uma:MLStorageUpload ApiKey="{x:Null}" Body="{x:Null}" ContinueOnError="{x:Null}" DatasetPublicUrl="{x:Null}" FileName="{x:Null}" FileNameInStorage="{x:Null}" ResponseHeaders="{x:Null}" Result="{x:Null}" RuntimeDataset="{x:Null}" RuntimeProject="{x:Null}" SelectedDataset="{x:Reference __ReferenceID0}" SelectedProject="{x:Reference __ReferenceID1}" StatusCode="{x:Null}" Connection="Robot" DisplayName="Upload File" FilePath="[in_FilePath]" sap:VirtualizedContainerService.HintSize="350,273.333333333333" sap2010:WorkflowViewState.IdRef="MLStorageUpload_1" RefreshDataset="False" RefreshProject="False" StoragePath="[&quot;images/&quot;+in_Classification.ToLower]">
+    <uma:MLStorageUpload ApiKey="{x:Null}" Body="{x:Null}" ContinueOnError="{x:Null}" DatasetPublicUrl="{x:Null}" FileName="{x:Null}" FileNameInStorage="{x:Null}" ResponseHeaders="{x:Null}" Result="{x:Null}" RuntimeDataset="{x:Null}" RuntimeProject="{x:Null}" StatusCode="{x:Null}" Connection="Robot" DisplayName="Upload File" FilePath="[in_FilePath]" sap:VirtualizedContainerService.HintSize="350,273.333333333333" sap2010:WorkflowViewState.IdRef="MLStorageUpload_1" RefreshDataset="False" RefreshProject="False" StoragePath="[&quot;images/&quot;+in_Classification.ToLower]">
       <uma:MLStorageUpload.Datasets>
         <um:PageData x:TypeArguments="um:Dataset" PageNum="1" PageSize="50" TotalCount="6">
           <um:PageData.DataList>
@@ -100,7 +103,7 @@
               <um:Dataset Id="9c726b37-27f5-4f5d-9c0a-13ca36cbcb62" Name="Training" ProjectId="6002e5b4-46fc-44a3-8edb-507e89f491ec" />
               <um:Dataset Id="45a7daf0-cb67-49bf-99e4-9c60a7b60a5f" Name="Training_3" ProjectId="6002e5b4-46fc-44a3-8edb-507e89f491ec" />
               <um:Dataset Id="5e876e13-7e19-4805-b127-4e1980f6da13" Name="Training_4withDentedSet" ProjectId="6002e5b4-46fc-44a3-8edb-507e89f491ec" />
-              <um:Dataset x:Name="__ReferenceID0" Id="52bb8891-38fd-4a2f-8784-fdfefe7efc92" Name="Training_New" ProjectId="6002e5b4-46fc-44a3-8edb-507e89f491ec" />
+              <x:Reference>__ReferenceID1</x:Reference>
             </scg:List>
           </um:PageData.DataList>
         </um:PageData>
@@ -135,7 +138,7 @@
               <um:Project Id="e4a764db-0f2f-4409-a359-fc40a2478303" Name="Image Classifier" />
               <um:Project Id="f2babceb-2c69-49e5-973c-ede0b3db6945" Name="Image Classifier V2" />
               <um:Project Id="35c57b5a-53b4-43e5-96f7-11225fdc56d0" Name="ImageClassification" />
-              <um:Project x:Name="__ReferenceID1" Id="6002e5b4-46fc-44a3-8edb-507e89f491ec" Name="ImageClassification_NM" />
+              <x:Reference>__ReferenceID0</x:Reference>
               <um:Project Id="f3391e55-1f5b-4ef8-bcc1-6c56966edea8" Name="jeremyTestDataset" />
               <um:Project Id="fa2f4464-380c-4bec-a933-7903a05404a6" Name="KP_test" />
               <um:Project Id="51df1539-1c15-4379-bcef-d00a0f191833" Name="mariuspaval" />
@@ -163,6 +166,12 @@
           </um:PageData.DataList>
         </um:PageData>
       </uma:MLStorageUpload.Projects>
+      <uma:MLStorageUpload.SelectedDataset>
+        <um:Dataset x:Name="__ReferenceID1" Id="52bb8891-38fd-4a2f-8784-fdfefe7efc92" Name="Training_New" ProjectId="6002e5b4-46fc-44a3-8edb-507e89f491ec" />
+      </uma:MLStorageUpload.SelectedDataset>
+      <uma:MLStorageUpload.SelectedProject>
+        <um:Project x:Name="__ReferenceID0" Id="6002e5b4-46fc-44a3-8edb-507e89f491ec" Name="ImageClassification_NM" />
+      </uma:MLStorageUpload.SelectedProject>
     </uma:MLStorageUpload>
   </Sequence>
 </Activity>
